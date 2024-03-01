@@ -17,7 +17,8 @@ fname_simulations = "data_TVAT_waveforms_examples.pickle"
 with open(join(dir_data, fname_simulations), "rb") as f:
     popsmooths = pickle.load(f)
 
-n_samples = 275
+# Downsampled for github repository
+n_samples = 275 // 2 + 1
 t = 0.025 * np.arange(n_samples) - 1.125
 
 ymax = 2.5
