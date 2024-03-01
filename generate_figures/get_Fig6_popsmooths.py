@@ -72,9 +72,9 @@ for parameter in selective_parameters:
     for ii in range(len(parameter_indices[parameter])):
         ind = parameter_indices[parameter][ii]
         if ind in idx_val_zero[parameter]:
-            save_data[parameter]["zero"].append(popsmooths[ind, : n_samples])
+            save_data[parameter]["zero"].append(popsmooths[ind, 0 : n_samples : 2])
         else:
-            save_data[parameter]["nonzero"].append(popsmooths[ind, : n_samples])
+            save_data[parameter]["nonzero"].append(popsmooths[ind, 0 : n_samples : 2])
 
 with open(join(dir_data, "data_TVAT_waveforms_examples.pickle"), "wb") as f:
     pickle.dump(save_data, f)
